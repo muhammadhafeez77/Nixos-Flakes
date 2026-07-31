@@ -15,6 +15,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # boot.loader.grub.enable = true; When rebuilding and if it gives systemd error , enable them and comment out the above two lines 
+  # boot.loader.grub.device = "/dev/sda";
+  # boot.loader.systemd-boot.enable = false;
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
