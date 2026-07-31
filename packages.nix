@@ -2,8 +2,11 @@
 
 {
   home.packages = with pkgs; [
+    # --- SYSYTEM ---                         
     alacritty
+    gcc
     wget
+    clang-tools
     fastfetch
     htop
     btop
@@ -12,9 +15,8 @@
     cbonsai
     git
     tealdeer
-    xclip
-    maim
     slop
+    xfce4-screenshooter
     bat
     tree
     fzf
@@ -23,6 +25,7 @@
     thunar
     thunar-volman
     thunar-media-tags-plugin
+    gparted
     xwallpaper
     rofi
     picom
@@ -34,6 +37,7 @@
     atril
     ristretto
     pulseaudio
+    pulsemixer
     vlc
     cava
     fd
@@ -50,9 +54,6 @@
     intelephense
     typescript-language-server
     typescript
-    #libclang
-    clang-tools
-    gcc
     gnumake
     cmake
     pandoc
@@ -62,8 +63,17 @@
     imagemagick
     zstd
     vscode
-    emacs
+    libreoffice
     zellij
+    tmux
+    xdg-desktop-portal-gtk
+    libnotify
+    at
+    dunst
+    slock
+    links2
+    dillo
+    qutebrowser
     # add all your packages here
   ];
 }

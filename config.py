@@ -56,7 +56,7 @@ keys = [
     Key([mod], "d", lazy.spawn("rofi -show drun -show-icons"), desc='Run Launcher'),
 
     Key([mod], "s",
-        lazy.spawn('sh -c "maim -s | xclip -selection clipboard -t image/png -i"'),
+        lazy.spawn('sh -c "xfce4-screenshooter -r"'),
         desc="Screenshot"),
    
     # Volume

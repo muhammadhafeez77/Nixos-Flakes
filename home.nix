@@ -14,6 +14,7 @@
     shellAliases = {
       btw = "echo i use nixos btw";
       nrs = "sudo nixos-rebuild switch";
+      nrsd = "sudo nixos-rebuild switch --upgrade";
       nrsf = "sudo nixos-rebuild switch --flake /etc/nixos/#nixos-btw";
       cdcc = "cd /etc/nixos/";
       vimc = "sudo nvim /etc/nixos/configuration.nix";
@@ -21,22 +22,24 @@
       vimp = "sudo nvim /etc/nixos/packages.nix";
       vimf = "sudo nvim /etc/nixos/flake.nix";
       vimq = "sudo nvim ~/.config/qtile/config.py";
-
+      vimo = "sudo nvim ~/.config/oxwm/config.lua ";
+      zen = "flatpak run app.zen_browser.zen";
     };
 
     initExtra = ''
       export PS1='\[\e[38;5;76m\]\u\[\e[0m\] in \[\e[38;5;32m\]\w\[\e[0m\] \\$ '
+      export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow'
     '';
   };
 
   programs.git.enable = true; #### GITHUB
 
-  home.sessionPath = [ "$HOME/.config/emacs/bin" ];
 
   home.sessionVariables = {
     #### SESSION VARIALES
     PATH = "$HOME/.npm-global/bin:$PATH";
   };
+
 
 
   programs.vim = {

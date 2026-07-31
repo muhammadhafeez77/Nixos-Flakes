@@ -28,8 +28,6 @@
   time.timeZone = "Asia/Karachi"; # CHange time for your secific zone
 
   # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -45,6 +43,17 @@
       	'';
   };
 
+  # OXWN
+  services.xserver.windowManager.oxwm.enable = true;
+
+  # Version Control Builds
+  nix.optimise.automatic = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.coffee = {
     isNormalUser = true;
@@ -53,6 +62,13 @@
       tree
     ];
   };
+
+  # Flatpak
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.config.common.default = "*";
+
 
   programs.firefox.enable = true;
 
@@ -70,6 +86,12 @@
     pkgs.thunar-volman
   ];
 
+  #Notification - daemon
+
+  services.dunst.enable = true;
+  services.atd.enable = true;
+
+  programs.slock.enable = true;
   # List packages installed in system profile.
   # To search for packages , run ,  nix search wget
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -130,7 +152,7 @@
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
-  # services.printing.enable = true; 
+  services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
