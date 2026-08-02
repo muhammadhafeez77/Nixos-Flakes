@@ -15,10 +15,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # boot.loader.grub.enable = true; When rebuilding and if it gives systemd error , enable them and comment out the above two lines 
-  # boot.loader.grub.device = "/dev/sda";
-  # boot.loader.systemd-boot.enable = false;
-
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -49,6 +45,9 @@
 
   # OXWN
   services.xserver.windowManager.oxwm.enable = true;
+
+  # NIRI
+  programs.niri.enable = true;
 
   # Version Control Builds
   nix.optimise.automatic = true;
@@ -97,19 +96,23 @@
 
   programs.slock.enable = true;
   # List packages installed in system profile.
-  # To search for packages , run ,  nix search wget
-  # You can use https://search.nixos.org/ to find more packages (and options).
 
   #==========  PACKAGES ARE ADDED HERE BUT I'VE PUT THEM IN packages.nix AND IMPORTED INTO home.nix =====================
   environment.systemPackages = with pkgs; [
     nano
     vim-full
     neovim
+    fzf
   ];
 
   # Add Fonts
   fonts.packages = with pkgs; [
     jetbrains-mono
+    nerd-fonts.symbols-only
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    # fonts-awesome
   ];
 
   # List services that you want to enable:

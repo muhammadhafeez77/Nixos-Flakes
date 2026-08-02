@@ -24,6 +24,7 @@
       vimq = "sudo nvim ~/.config/qtile/config.py";
       vimo = "sudo nvim ~/.config/oxwm/config.lua ";
       zen = "flatpak run app.zen_browser.zen";
+      pdd = "sudo kill -USR1 $(pgrep ^dd)";
     };
 
     initExtra = ''

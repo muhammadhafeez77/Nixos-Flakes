@@ -19,7 +19,6 @@
     xfce4-screenshooter
     bat
     tree
-    fzf
     killall
     ranger
     thunar
@@ -32,7 +31,6 @@
     unzip
     python3
     brightnessctl
-    cherrytree
     mpv
     atril
     ristretto
@@ -74,6 +72,11 @@
     links2
     dillo
     qutebrowser
-    # add all your packages here
+    remmina
+    niri
+    fuzzel
+    xwayland-satellite
+    mousepad
+    #    inputs.noctalia.packages.${system}.default
   ];
 }
